@@ -32,7 +32,14 @@
                             <outlet property="delegate" destination="lum-9A-Ga2" id="Wxf-vE-9NV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tab Hold" id="8Hb-N2-HbH"/>
+                    <navigationItem key="navigationItem" title="Tab Hold" id="8Hb-N2-HbH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lNT-qk-TTT">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="lum-9A-Ga2" id="IOy-vb-Or2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6B-J0-fgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
