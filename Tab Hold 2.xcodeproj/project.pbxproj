@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B88573320D47BFD00598DE6 /* elley.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B88573220D47BFD00598DE6 /* elley.otf */; };
+		5B88573A20D4840500598DE6 /* Tabbo Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B88573920D4840500598DE6 /* Tabbo Logo.png */; };
 		5BAFE42D20CE085700CA4708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE42C20CE085700CA4708 /* AppDelegate.swift */; };
 		5BAFE42F20CE085700CA4708 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE42E20CE085700CA4708 /* TodoListViewController.swift */; };
 		5BAFE43220CE085700CA4708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAFE43020CE085700CA4708 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B88573220D47BFD00598DE6 /* elley.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elley.otf; sourceTree = "<group>"; };
+		5B88573920D4840500598DE6 /* Tabbo Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tabbo Logo.png"; sourceTree = "<group>"; };
 		5BAFE42920CE085700CA4708 /* Tab Hold 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tab Hold 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAFE42C20CE085700CA4708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAFE42E20CE085700CA4708 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B88573420D47C0800598DE6 /* Custom Font */ = {
+			isa = PBXGroup;
+			children = (
+				5B88573220D47BFD00598DE6 /* elley.otf */,
+				5B88573920D4840500598DE6 /* Tabbo Logo.png */,
+			);
+			path = "Custom Font";
+			sourceTree = "<group>";
+		};
 		5BAFE42020CE085700CA4708 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 			children = (
 				5BAFE43020CE085700CA4708 /* Main.storyboard */,
 				5BAFE43520CE085C00CA4708 /* LaunchScreen.storyboard */,
+				5B88573420D47C0800598DE6 /* Custom Font */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,9 +171,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B88573A20D4840500598DE6 /* Tabbo Logo.png in Resources */,
 				5BAFE43720CE085C00CA4708 /* LaunchScreen.storyboard in Resources */,
 				5BAFE43420CE085C00CA4708 /* Assets.xcassets in Resources */,
 				5BAFE43220CE085700CA4708 /* Main.storyboard in Resources */,
+				5B88573320D47BFD00598DE6 /* elley.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
