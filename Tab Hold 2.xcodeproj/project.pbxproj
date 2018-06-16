@@ -17,9 +17,11 @@
 		5BAFE43420CE085C00CA4708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAFE43320CE085C00CA4708 /* Assets.xcassets */; };
 		5BAFE43720CE085C00CA4708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAFE43520CE085C00CA4708 /* LaunchScreen.storyboard */; };
 		5BAFE46D20D0607800CA4708 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE46B20D0607800CA4708 /* DataModel.xcdatamodeld */; };
+		66EE0CCD596C49746CBF6584 /* Pods_Tab_Hold_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B17FD5189206BDAD57B5B0 /* Pods_Tab_Hold_2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D81BAC94F7FEC4FFF1A9807 /* Pods-Tab Hold 2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tab Hold 2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tab Hold 2/Pods-Tab Hold 2.debug.xcconfig"; sourceTree = "<group>"; };
 		5B88573220D47BFD00598DE6 /* elley.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elley.otf; sourceTree = "<group>"; };
 		5B88573920D4840500598DE6 /* Tabbo Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tabbo Logo.png"; sourceTree = "<group>"; };
 		5B88574120D498B700598DE6 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		5BAFE43620CE085C00CA4708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BAFE43820CE085C00CA4708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BAFE46C20D0607800CA4708 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		78B17FD5189206BDAD57B5B0 /* Pods_Tab_Hold_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tab_Hold_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A42E19B09E44305E3C0A5BC /* Pods-Tab Hold 2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tab Hold 2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tab Hold 2/Pods-Tab Hold 2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +43,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66EE0CCD596C49746CBF6584 /* Pods_Tab_Hold_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42F4974011AEF21DC22EE91B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D81BAC94F7FEC4FFF1A9807 /* Pods-Tab Hold 2.debug.xcconfig */,
+				8A42E19B09E44305E3C0A5BC /* Pods-Tab Hold 2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5B88573420D47C0800598DE6 /* Custom Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +75,8 @@
 				5BAFE42B20CE085700CA4708 /* Tab Hold 2 */,
 				5BAFE43820CE085C00CA4708 /* Info.plist */,
 				5BAFE42A20CE085700CA4708 /* Products */,
+				42F4974011AEF21DC22EE91B /* Pods */,
+				CBF2CCDF8FBB08C243E55E59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +135,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CBF2CCDF8FBB08C243E55E59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B17FD5189206BDAD57B5B0 /* Pods_Tab_Hold_2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BAFE43B20CE085C00CA4708 /* Build configuration list for PBXNativeTarget "Tab Hold 2" */;
 			buildPhases = (
+				9110344F89F8F6E32424BFEB /* [CP] Check Pods Manifest.lock */,
 				5BAFE42520CE085700CA4708 /* Sources */,
 				5BAFE42620CE085700CA4708 /* Frameworks */,
 				5BAFE42720CE085700CA4708 /* Resources */,
+				53C2A24DA3210A2E5E6CE45A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +213,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53C2A24DA3210A2E5E6CE45A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tab Hold 2/Pods-Tab Hold 2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tab Hold 2/Pods-Tab Hold 2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9110344F89F8F6E32424BFEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tab Hold 2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BAFE42520CE085700CA4708 /* Sources */ = {
@@ -338,6 +405,7 @@
 		};
 		5BAFE43C20CE085C00CA4708 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D81BAC94F7FEC4FFF1A9807 /* Pods-Tab Hold 2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +424,7 @@
 		};
 		5BAFE43D20CE085C00CA4708 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A42E19B09E44305E3C0A5BC /* Pods-Tab Hold 2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
