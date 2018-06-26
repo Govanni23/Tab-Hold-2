@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
 class CategoryViewController: UITableViewController {
     
@@ -17,6 +18,9 @@ class CategoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 80.0
+        
        loadCategories()
     }
 
@@ -27,8 +31,10 @@ class CategoryViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
+        let fullName = "\(String(describing: categories![indexPath.row].firstName)) \(String(describing: categories![indexPath.row].lastName))"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! SwipeTableViewCell
+        cell.textLabel?.text = fullName
+        cell.delegate = self
         return cell
     }
     
@@ -36,24 +42,29 @@ class CategoryViewController: UITableViewController {
     //MARK: - Add New Categories
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
-        var textField = UITextField()
-        
+        var firstNameTextField = UITextField()
+        var lastNameTextField = UITextField()
         let alert = UIAlertController(title: "Add New Tab", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Tab", style: .default) { (action) in
             //What happens when it's clicked
             
             let newCategory = Category()
-            newCategory.name = textField.text!
+            newCategory.firstName = firstNameTextField.text!
+            newCategory.lastName = lastNameTextField.text!
             self.save(category: newCategory)
 
         }
         
         alert.addAction(action)
         
-        alert.addTextField { (alertTextField) in
+        alert.addTextField { (alertFirstNameTextField) in
             //Placeholder
-            alertTextField.placeholder = "Person's Name"
-            textField = alertTextField
+            alertFirstNameTextField.placeholder = "Person's First Name"
+            firstNameTextField = alertFirstNameTextField
+        }
+        alert.addTextField { (alertLastNameTextField) in
+            alertLastNameTextField.placeholder = "Person's Last Name"
+            lastNameTextField = alertLastNameTextField
         }
         
         present(alert, animated: true, completion: nil )
@@ -93,3 +104,30 @@ class CategoryViewController: UITableViewController {
     
 }
 
+extension CategoryViewController: SwipeTableViewCellDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+            
+            if let categoryForDeletion = self.categories?[indexPath.row] {
+                do {
+                    try self.realm.write {
+                       self.realm.delete(categoryForDeletion)
+                    }
+                } catch {
+                    print("ERROR deleting category ------------> \(error)")
+                }
+             tableView.reloadData()
+            }
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete-icon")
+        
+        return [deleteAction]
+    }
+    
+}

@@ -6,23 +6,31 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="elley.otf">
+            <string>Elley</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tabbo-->
         <scene sceneID="ma9-1M-Ohu">
             <objects>
                 <tableViewController id="Mq1-HQ-AAU" customClass="CategoryViewController" customModule="Tab_Hold_2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kOG-eb-rnu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="546.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="5ga-GB-8To">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="77" id="5ga-GB-8To" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5ga-GB-8To" id="BEU-sG-0nz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="76.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -41,12 +49,192 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="lum-9A-Ga2" kind="show" identifier="goToItems" id="3IF-AP-w5Y"/>
+                        <segue destination="irY-72-ffI" kind="show" identifier="goToItems" id="Ha8-BR-jRX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sm-PX-GB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="188"/>
+            <point key="canvasLocation" x="701.60000000000002" y="187.55622188905548"/>
+        </scene>
+        <!--Tabbo-->
+        <scene sceneID="PQ5-fC-TWW">
+            <objects>
+                <viewController id="irY-72-ffI" customClass="TodoListViewController" customModule="Tab_Hold_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OGF-F8-1bX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-mc-qaF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vgc-kN-knE">
+                                        <rect key="frame" x="112" y="0.0" width="150" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-H8-izj">
+                                        <rect key="frame" x="270" y="158" width="97" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                                        <color key="textColor" red="0.31059762835502625" green="0.78358936309814453" blue="0.46790385246276855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" keyboardDismissMode="onDrag" text="Example" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-xW-dYv">
+                                        <rect key="frame" x="112" y="138" width="150" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" keyboardDismissMode="onDrag" text="Example" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="30p-j9-3nn">
+                                        <rect key="frame" x="112" y="169" width="150" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14509803921568626" green="0.38431372549019605" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Tabs" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxT-25-j2A">
+                                <rect key="frame" x="0.0" y="232" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.1450980392" green="0.38431372549999998" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="irY-72-ffI" id="ya2-Mx-8WF"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d91-ms-7G9">
+                                <rect key="frame" x="0.0" y="288" width="375" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ToDoItemCell" rowHeight="77" id="D8Y-wU-Mxt" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D8Y-wU-Mxt" id="FBb-vv-XFm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4T-1T-cNs">
+                                                    <rect key="frame" x="300" y="11" width="60" height="55"/>
+                                                    <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="30"/>
+                                                    <color key="textColor" red="0.31059762839999999" green="0.78358936310000005" blue="0.46790385249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dOa-Hv-Vo8">
+                                                    <rect key="frame" x="15" y="8" width="60" height="60"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrg-TZ-HjJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUf-ni-70b">
+                                                    <rect key="frame" x="88" y="11" width="198" height="55"/>
+                                                    <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jUf-ni-70b" firstAttribute="leading" secondItem="dOa-Hv-Vo8" secondAttribute="trailing" constant="13" id="2w7-7n-l13"/>
+                                                <constraint firstItem="dOa-Hv-Vo8" firstAttribute="leading" secondItem="FBb-vv-XFm" secondAttribute="leading" constant="15" id="3K9-4B-t0B"/>
+                                                <constraint firstAttribute="bottom" secondItem="dOa-Hv-Vo8" secondAttribute="bottom" constant="8.5" id="5tC-lg-72f"/>
+                                                <constraint firstItem="jUf-ni-70b" firstAttribute="bottom" secondItem="FBb-vv-XFm" secondAttribute="bottomMargin" id="8Ic-jp-zEz"/>
+                                                <constraint firstItem="C4T-1T-cNs" firstAttribute="bottom" secondItem="FBb-vv-XFm" secondAttribute="bottomMargin" id="8uA-Kk-dMH"/>
+                                                <constraint firstItem="jUf-ni-70b" firstAttribute="top" secondItem="FBb-vv-XFm" secondAttribute="topMargin" id="OCu-PI-DPN"/>
+                                                <constraint firstItem="C4T-1T-cNs" firstAttribute="top" secondItem="FBb-vv-XFm" secondAttribute="topMargin" id="UZg-qH-m5J"/>
+                                                <constraint firstItem="dOa-Hv-Vo8" firstAttribute="top" secondItem="FBb-vv-XFm" secondAttribute="top" constant="8" id="UpQ-yw-0F9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jUf-ni-70b" secondAttribute="trailing" constant="74" id="WBD-Rl-F3V"/>
+                                                <constraint firstItem="C4T-1T-cNs" firstAttribute="trailing" secondItem="FBb-vv-XFm" secondAttribute="trailingMargin" id="j3z-fp-LjF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="irY-72-ffI" id="HZT-PE-Op2"/>
+                                    <outlet property="delegate" destination="irY-72-ffI" id="aHm-d7-btd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="G00-YM-uMg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tabbo" largeTitleDisplayMode="never" id="8Kk-f4-iy2">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="YzR-NI-n0s">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="irY-72-ffI" id="HJi-gh-Nwn"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="Wnq-jN-6gu"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tabHoldersFirstName" destination="I2h-xW-dYv" id="Z35-66-e21"/>
+                        <outlet property="tabHoldersLastName" destination="30p-j9-3nn" id="wJm-we-ece"/>
+                        <outlet property="tabsTableView" destination="d91-ms-7G9" id="W0U-TM-Tx4"/>
+                        <segue destination="AHT-fB-H6c" kind="show" identifier="goToTabView" id="2y3-M0-5XL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBG-Rz-Eu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333.5999999999999" y="187.55622188905548"/>
+        </scene>
+        <!--Tabbo-->
+        <scene sceneID="glW-fO-yS5">
+            <objects>
+                <viewController id="AHT-fB-H6c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sAZ-u7-7u3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28f-ry-5c2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-o7-OgM">
+                                        <rect key="frame" x="112" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" keyboardDismissMode="onDrag" text="Item Example" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N1f-D3-gy3">
+                                        <rect key="frame" x="8" y="158" width="254" height="56.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-uG-0eD">
+                                        <rect key="frame" x="270" y="158" width="97" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1450980392" green="0.38431372549999998" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-LH-8up">
+                                <rect key="frame" x="16" y="240" width="343" height="427"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Hc7-wN-2j3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tabbo" id="PvO-ci-NRa">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="QHA-hY-UrE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8m-FA-VFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1968.8" y="187.55622188905548"/>
         </scene>
         <!--Tabbo-->
         <scene sceneID="knj-pA-Jza">
@@ -56,16 +244,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="P32-if-znK">
+                        <searchBar key="tableHeaderView" contentMode="redraw" translucent="NO" id="P32-if-znK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" red="0.1450980392" green="0.38431372549999998" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="lum-9A-Ga2" id="mZi-FI-3nm"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="oXZ-F2-Ry3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="oXZ-F2-Ry3" customClass="SwipeTableViewCell" customModule=" ">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oXZ-F2-Ry3" id="fc4-nZ-tWR">
@@ -82,28 +271,25 @@
                     <navigationItem key="navigationItem" title="Tabbo" id="8Hb-N2-HbH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lNT-qk-TTT">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="addButtonPressed:" destination="lum-9A-Ga2" id="IOy-vb-Or2"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6B-J0-fgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="188"/>
+            <point key="canvasLocation" x="702" y="850"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GMC-jS-G0n">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxt-wD-yws" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="R4n-tZ-Kew">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="R4n-tZ-Kew">
                         <rect key="frame" x="0.0" y="20" width="375" height="100.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.1450980392" green="0.38823529410000002" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.14509803921568626" green="0.38431372549019605" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                            <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="32"/>
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
@@ -121,6 +307,33 @@
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="187.55622188905548"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jIQ-YO-LNf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mTt-dD-SIV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="HEw-Ol-Xqa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14509803921568626" green="0.38431372549019605" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="35"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Elley" family="Elley" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQE-Fy-6x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="850"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="UserIcon.png" width="512" height="512"/>
+    </resources>
     <color key="tintColor" red="0.1450980392" green="0.38823529410000002" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
